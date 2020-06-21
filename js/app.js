@@ -44,5 +44,5 @@ do {
 
 
 
-main.innerHTML = `<h1>You guessed the number which is ${randomNumber} </h1>`;
+main.innerHTML = `<h1>It took you ${attempts} tries to guess the number ${randomNumber}. </h1>`;
 attempts++;
