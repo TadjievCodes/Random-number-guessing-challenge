@@ -10,7 +10,7 @@ function getRandomNumber(upper) {
 
 let attempts = 0;
 
-
+let message;
 
 
 
@@ -34,15 +34,44 @@ for(let i = 1; i <= 10; i++){
 }
 */
 
-
+// Do while Loop example for guessing number challenge
 
 do {
     guess = prompt('Enter the number please between 1 and 10! What is it?');
     attempts++;
 
-} while (parseInt(guess) !== randomNumber);
+    // Terminate the loop if the user guesses the number
+    if (parseInt(guess) === randomNumber) {
+        message = `It took you ${attempts} tries to guess the number ${randomNumber}.`;
+        break;
+    } else {
+        message = `You did not guess the number. It was ${randomNumber}.`;
+    }
+
+} // do while closing     
+//while (parseInt(guess) !== randomNumber);  // Or we could limit how many times our loop will run
+
+
+while (attempts < 10);
+
+main.innerHTML = message;
 
 
 
-main.innerHTML = `<h1>It took you ${attempts} tries to guess the number ${randomNumber}. </h1>`;
-attempts++;
+
+
+
+/*
+The following demonstrates how you might count down from 10 to 1 and display the remaining number of guess attempts to the user.
+
+for ( let i = 10; i >= 1; i-- ) {
+  let guess = prompt(`You have ${i} tries to guess a number between 1 and 10.`);
+  if ( parseInt(guess) === randomNumber ) {
+    message = `It took you ${i} tries to guess the number ${randomNumber}.`;
+    break;
+  } else {
+    message = `You did not guess the number. It was ${randomNumber}.`;
+  }
+}
+
+*/
